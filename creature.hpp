@@ -1,17 +1,23 @@
 #ifndef CREATURE_HPP
 #define CREATURE_HPP
 
+enum FIGHTERS {BARBARIAN, VAMPIRE, BLUE_MEN, MEDUSA, HARRY_POTTER};
+
 class Creature {
-  private:
-    int attack;
-    int defense;
+  protected:
     int armor;
     int strengthPoints;
+    int dieAmount;
+    int dieSides;
+    int attackTotal;
+    int defenseTotal;
   public:
     Creature();
-    void setStrengthPoints(int); // int can be damage taken from attack
+    virtual ~Creature();
     virtual int attack() = 0; // pure virtual function
     virtual int defend() = 0; // pure virtual function
+    virtual void lowerStrengthPoints(int damageTaken);
+    virtual int getStrength();
 };
 
 #endif

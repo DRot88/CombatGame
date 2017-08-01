@@ -9,18 +9,18 @@
 CC = g++
 STD = -std=c++11
 CFLAGS = -c -g -Wall
-SOURCES = main.cpp creature.cpp
+SOURCES = main.cpp creature.cpp barbarian.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
-EXECUTABLE = CombatGame
+EXECUTABLE = combatGame
 
 
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-  $(CC) $(OBJECTS) $(STD) -o $@
+	$(CC) $(OBJECTS) $(STD) -o $@
 
 .cpp.o:
-  $(CC) $(CFLAGS) $< -o $@
+	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-  rm *o $(EXECUTABLE)
+	rm *o $(EXECUTABLE)
