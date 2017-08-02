@@ -25,7 +25,7 @@ int Barbarian::defend(int damageReceived) {
   int dice1 = (rand() % 6) + 1;
   int dice2 = (rand() % 6) + 1;
   defenseTotal = dice1 + dice2 + armor;
-  cout << "The Barbarian had a defense of : " << defenseTotal << endl;
+  cout << "The Barbarian had a defense of: " << defenseTotal << endl;
   if (defenseTotal >= damageReceived) {
     cout << "The attack was too weak and had no effect on the Barbarian." << endl;
   } else {
@@ -33,4 +33,8 @@ int Barbarian::defend(int damageReceived) {
     lowerStrengthPoints(totalDamage);
   }
   return totalDamage;
+}
+
+string Barbarian::getType() {
+  return "Barbarian";
 }

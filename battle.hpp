@@ -2,6 +2,7 @@
 #define BATTLE_HPP
 #include "creature.hpp"
 #include "barbarian.hpp"
+#include "vampire.hpp"
 
 class Battle {
   private:
