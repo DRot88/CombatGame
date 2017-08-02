@@ -7,16 +7,14 @@ class Creature {
   protected:
     int armor;
     int strengthPoints;
-    int dieAmount;
-    int dieSides;
     int attackTotal;
     int defenseTotal;
   public:
     Creature();
     virtual ~Creature();
     virtual int attack() = 0; // pure virtual function
-    virtual int defend() = 0; // pure virtual function
-    virtual void lowerStrengthPoints(int damageTaken);
+    virtual int defend(int damageTaken) = 0; // pure virtual function
+    virtual void lowerStrengthPoints(int damageReceived);
     virtual int getStrength();
 };
 

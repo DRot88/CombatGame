@@ -7,8 +7,6 @@ using std::endl;
 Barbarian::Barbarian() {
   armor = 0;
   strengthPoints = 12;
-  dieAmount = 2;
-  dieSides = 6;
 }
 
 Barbarian::~Barbarian() {
@@ -22,9 +20,17 @@ int Barbarian::attack() {
   return attackTotal;
 }
 
-int Barbarian::defend() {
+int Barbarian::defend(int damageReceived) {
+  int totalDamage = 0;
   int dice1 = (rand() % 6) + 1;
   int dice2 = (rand() % 6) + 1;
-  defenseTotal = dice1 + dice2; 
-  return defenseTotal;
+  defenseTotal = dice1 + dice2 + armor;
+  cout << "The Barbarian had a defense of : " << defenseTotal << endl;
+  if (defenseTotal >= damageReceived) {
+    cout << "The attack was too weak and had no effect on the Barbarian." << endl;
+  } else {
+    totalDamage = damageReceived - defenseTotal;
+    lowerStrengthPoints(totalDamage);
+  }
+  return totalDamage;
 }

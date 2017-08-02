@@ -9,7 +9,7 @@ class Barbarian : public Creature {
     Barbarian();
     ~Barbarian();
     virtual int attack(); // 2d6 default
-    virtual int defend(); // 2d6 default
+    virtual int defend(int damageReceived); // 2d6 default
 };
 
 #endif
