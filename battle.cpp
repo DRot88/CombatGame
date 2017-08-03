@@ -81,7 +81,8 @@ void Battle::setFighters() {
       break;
     }
     case 3 : {
-      // p1 = new BlueMen();
+      p1 = new Blue_Men();
+      cout << "\nPlayer 1 has chosen the Blue Man Group!!" << endl << endl;
       cin.ignore();
       break;
     }
@@ -117,7 +118,8 @@ void Battle::setFighters() {
       break;
     }
     case 3 : {
-      // p2 = new BlueMen();
+      p2 = new Blue_Men();
+      cout << "\nPlayer 2 has chosen the Blue Man Group!!" << endl << endl;
       cin.ignore();
       break;
     }

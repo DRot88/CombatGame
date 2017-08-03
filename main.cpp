@@ -1,6 +1,7 @@
 #include "creature.hpp"
 #include "barbarian.hpp"
 #include "vampire.hpp"
+#include "blue_men.hpp"
 #include "menu.hpp"
 #include <iostream>
 using std::cout;
