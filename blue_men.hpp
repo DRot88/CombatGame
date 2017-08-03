@@ -6,7 +6,7 @@ using std::string;
 
 class Blue_Men : public Creature {
   private:
-    int menLeft;
+    int mobSize;
   public:
     Blue_Men();
     ~Blue_Men();
