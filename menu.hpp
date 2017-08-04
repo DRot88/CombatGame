@@ -6,6 +6,7 @@ class Menu {
   public:
     Menu();
     void displayMenu();
+    bool replay();
 };
 
 #endif

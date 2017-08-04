@@ -9,9 +9,13 @@ Barbarian::Barbarian() {
   strengthPoints = 12;
 }
 
-Barbarian::~Barbarian() {
-  cout << "Deleting Barbarian" << endl;
-}
+Barbarian::~Barbarian() {}
+
+/****************************************************************
+** Function: Barbarian::attack
+** Description: The barbarian will roll 2, 6 sided die, and
+                return the result as the attack amount.
+****************************************************************/
 
 int Barbarian::attack() {
   int dice1 = (rand() % 6) + 1;
@@ -19,6 +23,13 @@ int Barbarian::attack() {
   attackTotal = dice1 + dice2;
   return attackTotal;
 }
+
+/****************************************************************
+** Function: Barbarian::defend(int damageReceived)
+** Description: The barbarian will roll 2, 6 sided die, and
+                return the total damage which is damage received
+                less the defense amount.
+****************************************************************/
 
 int Barbarian::defend(int damageReceived) {
   int totalDamage = 0;

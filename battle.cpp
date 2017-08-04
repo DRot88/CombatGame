@@ -1,8 +1,11 @@
 #include "battle.hpp"
 #include <iostream>
+#include <limits>
 using std::cout;
 using std::cin;
 using std::endl;
+using std::streamsize;
+using std::numeric_limits;
 
 Battle::Battle() {
   p1 = 0;
@@ -61,7 +64,7 @@ void Battle::fight() {
 }
 
 /*********************************************************************
-** Function: roll()
+** Function: displayFighters()
 ** Description: This function will display a list of all the creatures.
 **********************************************************************/
 
@@ -74,7 +77,7 @@ void Battle::displayFighters() {
 }
 
 /*********************************************************************
-** Function: roll()
+** Function: setFighters()
 ** Description: This function will call the displayFighters method and 
                 ask the users which fighter they would like. Once 
                 selected, it will set each pointer to the creature
@@ -123,7 +126,7 @@ void Battle::setFighters() {
         default : {
           cout << "Invalid choice." << endl << endl;
           cin.clear();
-          cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');            
+          cin.ignore(numeric_limits<streamsize>::max(), '\n');            
           continue;
         }
       }
@@ -168,7 +171,7 @@ void Battle::setFighters() {
       default : {
         cout << "Invalid choice." << endl << endl;
         cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');  
         continue;
       }
     }

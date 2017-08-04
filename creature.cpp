@@ -3,9 +3,13 @@
 
 Creature::Creature() {}
 
-Creature::~Creature() {
-  std::cout << "Deleting Creature" << std::endl;
-}
+Creature::~Creature() {}
+
+/****************************************************************
+** Function: lowerStrengthPoints(int damageTaken)
+** Description: This function will lower the health of the
+                creatures until there is no health remaining.
+****************************************************************/
 
 void Creature::lowerStrengthPoints(int damageTaken) {
   strengthPoints -= damageTaken;

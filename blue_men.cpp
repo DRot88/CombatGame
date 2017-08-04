@@ -10,9 +10,13 @@ Blue_Men::Blue_Men() {
   mobSize = 3;
 }
 
-Blue_Men::~Blue_Men() {
-  cout << "Deleting Blue Men" << endl;
-}
+Blue_Men::~Blue_Men() {}
+
+/****************************************************************
+** Function: Blue_Men::attack()
+** Description: The blue men will roll 2, 10 sided die, and the
+                result will be returned as the attack.
+****************************************************************/
 
 int Blue_Men::attack() {
   int dice1 = (rand() % 10) + 1;
@@ -20,6 +24,16 @@ int Blue_Men::attack() {
   attackTotal = dice1 + dice2;
   return attackTotal;
 }
+
+/****************************************************************
+** Function: Blue_Men::defend(int damageReceived)
+** Description: This will take an int as a parameter which is the
+                value the Blue Men are defending against. The 
+                Blue Men will roll a varied amount of 6 sided die, 
+                and the result of that is added with Blue Men armor
+                to give a total defense amount. The blue men will
+                lose their mobsize depending on health remaining.
+****************************************************************/
 
 int Blue_Men::defend(int damageReceived) {
   int totalDamage = 0;
