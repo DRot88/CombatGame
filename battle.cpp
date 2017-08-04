@@ -9,6 +9,17 @@ Battle::Battle() {
   p2 = 0;
 }
 
+/*********************************************************************
+** Function: Battle::fight()
+** Description: This function will call the setFighters() method to 
+                ask the users what fighter they would like to use and
+                assign each member pointer to the specific creature of
+                choice. From there is will loop through a battle
+                scenario until either one of the players has lost all
+                of there health (strength) points. It will then present
+                the winner of the game. 
+**********************************************************************/
+
 void Battle::fight() {
   int roundNum = 1;
   cout << "\nTime to battle!" << endl << endl;
@@ -42,7 +53,6 @@ void Battle::fight() {
     roundNum++;
   }
 
-
   delete p1;
   p1 = 0;
   delete p2;
@@ -50,7 +60,10 @@ void Battle::fight() {
   return;
 }
 
-//BARBARIAN, VAMPIRE, BLUE_MEN, MEDUSA, HARRY_POTTER
+/*********************************************************************
+** Function: roll()
+** Description: This function will display a list of all the creatures.
+**********************************************************************/
 
 void Battle::displayFighters() {
   cout << "1 - Barbarian" << endl;
@@ -60,86 +73,105 @@ void Battle::displayFighters() {
   cout << "5 - Harry Potter" << endl << endl;
 }
 
+/*********************************************************************
+** Function: roll()
+** Description: This function will call the displayFighters method and 
+                ask the users which fighter they would like. Once 
+                selected, it will set each pointer to the creature
+                of choice, which will be that players fighter.
+**********************************************************************/
+
 void Battle::setFighters() {
   int fighter;
   int fighter2;
 
   displayFighters();
   cout << "Player 1, please choose a fighter from the above list: ";
-  cin >> fighter;
 
-  switch(fighter) {
-    case 1 : {
-      p1 = new Barbarian();
-      cout << "\nPlayer 1 has chosen the mighty Barbarian!!" << endl << endl;
+    do {
+      cin >> fighter;  
+      switch(fighter) {
+        case 1 : {
+          p1 = new Barbarian();
+          cout << "\nPlayer 1 has chosen the mighty Barbarian!!" << endl << endl;
+          break;
+        }
+        case 2 : {
+          p1 = new Vampire();
+          cout << "\nPlayer 1 has chosen the suave Vampire!!" << endl << endl;      
+          cin.ignore();
+          break;
+        }
+        case 3 : {
+          p1 = new Blue_Men();
+          cout << "\nPlayer 1 has chosen the Blue Man Group!!" << endl << endl;
+          cin.ignore();
+          break;
+        }
+        case 4 : {
+          p1 = new Medusa();
+          cout << "\nPlayer 1 has chosen Medusa!!" << endl << endl;
+          cin.ignore();
+          break;
+        }
+        case 5 : {
+          p1 = new Harry_Potter();
+          cout << "\nPlayer 1 has chosen the great wizard, Harry Potter!" << endl << endl;
+          cin.ignore();
+          break;
+        }            
+        default : {
+          cout << "Invalid choice." << endl << endl;
+          cin.clear();
+          cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');            
+          continue;
+        }
+      }
       break;
-    }
-    case 2 : {
-      p1 = new Vampire();
-      cout << "\nPlayer 1 has chosen the suave Vampire!!" << endl << endl;      
-      cin.ignore();
-      break;
-    }
-    case 3 : {
-      p1 = new Blue_Men();
-      cout << "\nPlayer 1 has chosen the Blue Man Group!!" << endl << endl;
-      cin.ignore();
-      break;
-    }
-    case 4 : {
-      p1 = new Medusa();
-      cout << "\nPlayer 1 has chosen Medusa!!" << endl << endl;
-      cin.ignore();
-      break;
-    }
-    case 5 : {
-      p1 = new Harry_Potter();
-      cout << "\nPlayer 1 has chosen the great wizard, Harry Potter!" << endl << endl;
-      cin.ignore();
-      break;
-    }            
-    default : {
-      cout << "Invalid choice, exiting the program." << endl << endl;
-    }
-  }
+    } while (fighter < 1 || fighter > 5);
 
   displayFighters();
   cout << "Player 2, please choose a fighter from the above list: ";
-  cin >> fighter2;
-
-  switch(fighter2) {
-    case 1 : {
-      p2 = new Barbarian();
-      cout << "\nPlayer 2 has chosen the mighty Barbarian!!" << endl << endl;
-      break;
+  
+  do {
+    cin >> fighter2;
+    switch(fighter2) {
+      case 1 : {
+        p2 = new Barbarian();
+        cout << "\nPlayer 2 has chosen the mighty Barbarian!!" << endl << endl;
+        break;
+      }
+      case 2 : {
+        p2 = new Vampire();
+        cout << "\nPlayer 2 has chosen the suave Vampire!!" << endl << endl;
+        cin.ignore();
+        break;
+      }
+      case 3 : {
+        p2 = new Blue_Men();
+        cout << "\nPlayer 2 has chosen the Blue Man Group!!" << endl << endl;
+        cin.ignore();
+        break;
+      }
+      case 4 : {
+        p2 = new Medusa();
+        cout << "\nPlayer 2 has chosen Medusa!!" << endl << endl;
+        cin.ignore();
+        break;
+      }
+      case 5 : {
+        p2 = new Harry_Potter();
+        cout << "\nPlayer 2 has chosen the great wizard, Harry Potter!" << endl << endl;      
+        cin.ignore();
+        break;
+      }            
+      default : {
+        cout << "Invalid choice." << endl << endl;
+        cin.clear();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  
+        continue;
+      }
     }
-    case 2 : {
-      p2 = new Vampire();
-      cout << "\nPlayer 2 has chosen the suave Vampire!!" << endl << endl;
-      cin.ignore();
-      break;
-    }
-    case 3 : {
-      p2 = new Blue_Men();
-      cout << "\nPlayer 2 has chosen the Blue Man Group!!" << endl << endl;
-      cin.ignore();
-      break;
-    }
-    case 4 : {
-      p2 = new Medusa();
-      cout << "\nPlayer 2 has chosen Medusa!!" << endl << endl;
-      cin.ignore();
-      break;
-    }
-    case 5 : {
-      p2 = new Harry_Potter();
-      cout << "\nPlayer 2 has chosen the great wizard, Harry Potter!" << endl << endl;      
-      cin.ignore();
-      break;
-    }            
-    default : {
-      cout << "Invalid choice, exiting the program." << endl << endl;
-    }
-  }  
-
+    break;
+  } while (fighter2 < 1 || fighter2 > 5);
 }
