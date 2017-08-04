@@ -93,7 +93,8 @@ void Battle::setFighters() {
       break;
     }
     case 5 : {
-      // p1 = new HarryPotter();
+      p1 = new Harry_Potter();
+      cout << "\nPlayer 1 has chosen the great wizard, Harry Potter!" << endl << endl;
       cin.ignore();
       break;
     }            
@@ -131,7 +132,8 @@ void Battle::setFighters() {
       break;
     }
     case 5 : {
-      // p2 = new HarryPotter();
+      p2 = new Harry_Potter();
+      cout << "\nPlayer 2 has chosen the great wizard, Harry Potter!" << endl << endl;      
       cin.ignore();
       break;
     }            
