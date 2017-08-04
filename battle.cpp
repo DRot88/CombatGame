@@ -18,19 +18,19 @@ void Battle::fight() {
     cout << "Round # " << roundNum << endl << endl;
 
     int p1attack = p1->attack();
-    cout << "Player 1 " << p1->getType() << " Attack: " << p1attack << endl;
+    cout << "Player 1's " << p1->getType() << " Attack: " << p1attack << endl;
     int p2defend = p2->defend(p1attack);
-    cout << "Player 2 " << p2->getType() << " Damage Taken: " << p2defend << endl;
-    cout << "Player 1 " << p1->getType() << " Strength Remaining: " << p1->getStrength() << endl;
-    cout << "Player 2 " << p2->getType() << " Strength Remaining: " << p2->getStrength() << endl << endl;
+    cout << "Player 2's " << p2->getType() << " Damage Taken: " << p2defend << endl;
+    cout << "Player 1's " << p1->getType() << " Strength Remaining: " << p1->getStrength() << endl;
+    cout << "Player 2's " << p2->getType() << " Strength Remaining: " << p2->getStrength() << endl << endl;
 
     if (p1->getStrength() > 0 && p2->getStrength() > 0) {
       int p2attack = p2->attack();
-      cout << "Player 2 " << p2->getType() << " Attack: " << p2attack << endl;
+      cout << "Player 2's " << p2->getType() << " Attack: " << p2attack << endl;
       int p1defend = p1->defend(p2attack);
-      cout << "Player 1 " << p1->getType() << " Damage Taken: " << p1defend << endl;
-      cout << "Player 1 " << p1->getType() << " Strength Remaining: " << p1->getStrength() << endl;
-      cout << "Player 2 " << p2->getType() << " Strength Remaining: " << p2->getStrength() << endl << endl;
+      cout << "Player 1's " << p1->getType() << " Damage Taken: " << p1defend << endl;
+      cout << "Player 1's " << p1->getType() << " Strength Remaining: " << p1->getStrength() << endl;
+      cout << "Player 2's " << p2->getType() << " Strength Remaining: " << p2->getStrength() << endl << endl;
    }
 
    if (p1->getStrength() == 0) {
@@ -87,7 +87,8 @@ void Battle::setFighters() {
       break;
     }
     case 4 : {
-      // p1 = new Medusa();
+      p1 = new Medusa();
+      cout << "\nPlayer 1 has chosen Medusa!!" << endl << endl;
       cin.ignore();
       break;
     }
@@ -124,7 +125,8 @@ void Battle::setFighters() {
       break;
     }
     case 4 : {
-      // p2 = new Medusa();
+      p2 = new Medusa();
+      cout << "\nPlayer 2 has chosen Medusa!!" << endl << endl;
       cin.ignore();
       break;
     }

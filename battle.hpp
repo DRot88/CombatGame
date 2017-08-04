@@ -4,6 +4,7 @@
 #include "barbarian.hpp"
 #include "vampire.hpp"
 #include "blue_men.hpp"
+#include "medusa.hpp"
 
 class Battle {
   private:

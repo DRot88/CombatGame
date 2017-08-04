@@ -9,7 +9,7 @@
 CC = g++
 STD = -std=c++11
 CFLAGS = -c -g -Wall
-SOURCES = main.cpp menu.cpp battle.cpp creature.cpp barbarian.cpp vampire.cpp blue_men.cpp
+SOURCES = main.cpp menu.cpp battle.cpp creature.cpp barbarian.cpp vampire.cpp blue_men.cpp medusa.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 EXECUTABLE = combatGame
 
