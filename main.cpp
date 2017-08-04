@@ -1,3 +1,11 @@
+/****************************************************************
+** Author: Daniel Roteneberg
+** Date: 8/2/2017
+** Description: The creature battle game will put 2 fighters with
+                different abilities against each other, and let 
+                the strongest fighter be victorious.
+*****************************************************************/
+
 #include "menu.hpp"
 #include <iostream>
 using std::cout;
