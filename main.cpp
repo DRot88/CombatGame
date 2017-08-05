@@ -5,9 +5,10 @@
                 different abilities against each other, and let 
                 the strongest fighter be victorious.
 *****************************************************************/
-
 #include "menu.hpp"
 #include <iostream>
+#include <cstdlib>   
+#include <ctime>             
 using std::cout;
 using std::endl;
 
